@@ -1,0 +1,164 @@
+// Reset CSS
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+a {
+	text-decoration: none;
+}
+
+// Fonts
+@font-face {
+	font-family: "Outfit";
+	src: url("../fonts/Outfit/static/Outfit-Light.ttf");
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: "Outfit";
+	src: url("fonts/Outfit/static/Outfit-Regular.ttf");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Outfit";
+	src: url("fonts/Outfit/static/Outfit-Bold.ttf");
+	font-weight: 700;
+}
+
+// CSS
+body {
+	background: hsl(217, 54%, 11%);
+	font-family: "Outfit", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.parent-container {
+	display: table;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+
+.child-container {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+$primary: hsl(215, 51%, 70%);
+$secondary: hsl(178, 100%, 50%);
+
+main {
+	max-width: 350px;
+	max-height: 597px;
+	display: inline-block;
+	text-align: left;
+	border-radius: 25px;
+	padding: 25px;
+	margin: 20px;
+	background: hsl(216, 50%, 16%);
+
+	.image-container {
+		position: relative;
+		display: block;
+		background-color: $secondary;
+		border-radius: 15px;
+		
+		.view {
+			z-index: 2;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			pointer-events: none;
+		}
+	}
+
+	.image-nft {
+		position: relative;
+		z-index: 3;
+		display: block;
+		border-radius: 10px;
+		margin: 0px;
+		padding: 0px;
+		background-color: red;
+
+		&:hover {
+			opacity: 0.5;
+			z-index: 1;
+		}
+	}
+
+	h1 {
+		color: hsl(0, 0%, 100%);
+		font-size: 22px;
+		font-weight: 400;
+		margin: 25px 0px;
+	}
+
+	span {
+		color: $primary;
+		color: $primary;
+		font-weight: 300;
+	}
+	
+	.sale {
+		margin: 25px 0px;
+		display: flex;
+		flex-wrap:wrap;
+		justify-content: space-between;
+
+		* {
+			display: flex;
+			align-items: center;	
+		}
+	}
+
+	.sale-price span {
+		font-weight: 600;
+		margin: 0px 5px;
+		color: $secondary;
+
+		@media screen and (max-width: 280px) {
+			margin-bottom: 10px;
+		}
+	}
+	
+	.sale-time {
+		color: $primary;
+		font-weight: 400;
+		
+		span {
+			margin-left: 5px;
+		}
+	}
+
+	hr {
+		background-color: hsl(215, 32%, 27%); 
+		padding: 0.5px;
+		border: none;
+	}
+
+	.creator {
+		margin: 15px 0px;
+		display: flex;
+		align-items: center;
+
+		img {
+			border-radius: 100%;
+			border: 1px solid #fff;
+			display:inline-block;
+			width: 35px;
+			margin-right: 15px;
+		};
+	}
+
+	.creator-name {
+		color: hsl(0, 0%, 100%);
+		font-size: 16px;
+	}
+
+	h1:hover, .creator-name:hover {
+		color: $secondary;
+	}
+}
